@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
 /* Gengeral *\ 
 \* Porpeties*/
 * {box-sizing: border-box;}
 
 body{
+    font-family: 'Source Sans Pro', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -13,6 +16,8 @@ ul {list-style: none;}
 
 :root{
     --primary-color: darkviolet;
+    --secondary-color: darkblue;
+    --primary-gradient: linear-gradient(90deg, deepskyblue 20%, darkviolet, var(--primary-color));
 }
 
 /* Start Header *\ 
@@ -46,9 +51,167 @@ ul {list-style: none;}
     color: #fff;
     margin: 0 10px;
 }
-
 /* End Header Intro */
 
+header{
+    height: 82vh;
+    background: var(--primary-gradient);
+    position: relative;
+}
+
+/* Start Nav Bar*/
+.menustyles li a{
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+.menustyles li a:hover{
+    color: var(--primary-color);
+}
+
+.navbuttons{
+    border: none;
+}
+
+.navbuttons:focus{
+    box-shadow: 0 0 2px #999;
+}
+
+.lines1, .lines2, .lines3{
+    width: 20px;
+    height: 2px;
+
+    margin: 3px;
+    transition: all 0.2s;
+}
+
+.crossx .lines1{
+    transform: translateY(4px) rotate(45deg);
+}
+
+.crossx .lines2{
+    opacity: 0;
+}
+
+.crossx .lines3{
+    transform: translateY(-6px) rotate(-45deg);
+}
+/* End Nav Bar */
+
+/* Start Banner */
+.banners{
+    width: 90%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.bannerheaders{
+    font-weight: bold;
+    border-left-style: 3px;
+    animation: bannerheader-ani 1s ease-out;
+}
+
+.bannerparagraphs, .bannerbtns{
+    animation: bannerheader-ani 1s ease-out backwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes bannerheader-ani {
+    from{
+        transform: translateY(80px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+/* End Banner */
+
+.studentgroups{
+    width: 45%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    animation: student-ani 2s ease-out;
+}
+
+.waves{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    z-index: 2;
+}
+
+@keyframes student-ani {
+    from{
+        transform: translateX(-80px);
+    }to{
+        transform: translateX(0px);
+    }
+}
 /* End Header *\ 
 \*  Section   */
 
+/* Start Sudent     *\ 
+\* Counter Section  */
+.counters{
+    width: 100%;
+    height: 18vh;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counteritems{
+    width: 25%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.counteritems:last-child{
+    border: none;
+}
+
+.counteritems .fas{
+    background: var(--primary-gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.counteritems h5{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/*   End Sudent   *\ 
+\* Counter Section*/
+
+/*Start AbuotUs *\ 
+\*  Section     */
+.aboutuss{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.2)
+    ), url("../assets/img/banner/banner4.jpg");
+
+    background-repeat: no-repeat;
+}
+
+.aboutuss ul li{
+    background-color: var(--secondary-color);
+    margin: 20px 0;
+}
+
+/*End AbuotUs *\ 
+\*  Section   */
